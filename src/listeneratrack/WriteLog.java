@@ -14,11 +14,8 @@ import java.time.LocalTime;
  */
 public class WriteLog {
     public static void WriteFrames(String trama){
-        try(BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\SISPC-0100\\Documents\\Logs\\AtrackUDP.txt", true));){
-            bw.write("Fecha: " + LocalDate.now() + " hora: " + LocalTime.now());
-            bw.newLine();
-            bw.write(trama);
-            bw.newLine();
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter("atrackLog.txt", true));){
+            bw.write(LocalDate.now() + " " + LocalTime.now() + ": " + trama);
             bw.newLine();
             //bw.flush();
             bw.close();
